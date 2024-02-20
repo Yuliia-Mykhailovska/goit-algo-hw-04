@@ -6,15 +6,15 @@ def get_cats_info(path):
         with open(path, 'r', encoding='utf-8') as file:
             lines = file.readlines()
             lines = [line.strip() for line in lines]
-            list = []
+            cats = []
             if not lines:
                 print('File is empty')
 
         for line in lines:
             strings = line.split(',')
             dictionary = {"id": strings[0], "name": strings[1], "age": strings[2]}
-            list.append(dictionary)
-        return list
+            cats.append(dictionary)
+        return cats
             
     except FileNotFoundError:
         print('No such file or directory')
